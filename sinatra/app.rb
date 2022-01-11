@@ -6,10 +6,16 @@ get '/' do
 end
 
 get '/secret' do
-  'This is a secret eeeepage!'
+  'This is a secret page!'
 end
 
-get '/cat' do
-  @name = ["tom", "Simba", "Harley"].sample
+get '/random-cat' do
+  @name = ["Tom", "Simba", "Harley"].sample
+  erb :index
+end 
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb :index
 end 
